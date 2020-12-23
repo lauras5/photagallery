@@ -1,0 +1,30 @@
+{
+  "name": "photagallery",
+  "version": "0.1.0",
+  "description": "An application for managing large image libraries.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALMaclaine/photagallery.git"
+  },
+  "keywords": [
+    "image",
+    "application",
+    "tag",
+    "management"
+  ],
+  "author": "Alessandro MacLaine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ALMaclaine/photagallery/issues"
+  },
+  "homepage": "https://github.com/ALMaclaine/photagallery#readme",
+  "dependencies": {
+    "minio": "^7.0.18",
+    "mysql2": "^2.2.5",
+    "redis": "^3.0.2"
+  }
+}
