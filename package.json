@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/ALMaclaine/photagallery#readme",
   "dependencies": {
+    "image-size": "^0.9.3",
+    "koa": "^2.13.0",
+    "koa-static": "^5.0.0",
     "minio": "^7.0.18",
     "mysql2": "^2.2.5",
     "redis": "^3.0.2"
