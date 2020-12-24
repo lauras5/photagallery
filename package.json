@@ -4,7 +4,8 @@
   "description": "An application for managing large image libraries.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run-all": "npm-run-all test",
+    "test": "echo asd"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,14 @@
   },
   "homepage": "https://github.com/ALMaclaine/photagallery#readme",
   "dependencies": {
+    "fullpath": "^1.2.2",
     "image-size": "^0.9.3",
     "koa": "^2.13.0",
     "koa-static": "^5.0.0",
     "minio": "^7.0.18",
     "mysql2": "^2.2.5",
-    "redis": "^3.0.2"
+    "npm-run-all": "^4.1.5",
+    "redis": "^3.0.2",
+    "seaweedfs": "^1.0.0"
   }
 }
