@@ -4,8 +4,11 @@
   "description": "An application for managing large image libraries.",
   "main": "index.js",
   "scripts": {
-    "run-all": "npm-run-all test",
-    "test": "echo asd"
+    "all": "concurrently \"npm run redis\" \"npm run weed\" \"npm run start\"",
+    "start": "node src/server.mjs",
+    "redis": "redis-server",
+    "weed": "node scripts/startSeaweedFS.mjs",
+    "weed-setup": "node scripts/setupSeaweedFS.mjs"
   },
   "repository": {
     "type": "git",
@@ -24,14 +27,21 @@
   },
   "homepage": "https://github.com/ALMaclaine/photagallery#readme",
   "dependencies": {
+    "@koa/router": "^10.0.0",
+    "async-busboy": "^1.0.1",
+    "concurrently": "^5.3.0",
     "fullpath": "^1.2.2",
     "image-size": "^0.9.3",
     "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-compose": "^4.1.0",
+    "koa-router": "^10.0.0",
     "koa-static": "^5.0.0",
+    "mime-types": "^2.1.27",
     "minio": "^7.0.18",
     "mysql2": "^2.2.5",
-    "npm-run-all": "^4.1.5",
+    "read-chunk": "^3.2.0",
     "redis": "^3.0.2",
-    "seaweedfs": "^1.0.0"
+    "sharp": "^0.27.0"
   }
 }

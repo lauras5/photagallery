@@ -1,10 +1,10 @@
-import {exec} from 'child_process';
+import {exec, spawn} from 'child_process';
 
 export async function putBucket(name) {
     return new Promise((res, rej) => {
         exec(`aws --endpoint-url http://localhost:8333 s3 mb s3://${name}`, (error, stdout, stderr) => {
             if (error) {
-                rej(false);
+                rej(error);
             } else {
                 res(true)
             }
@@ -59,7 +59,7 @@ export async function putObject(file, bucket) {
     return new Promise((res, rej) => {
         exec(`aws --endpoint-url http://localhost:8333 s3 cp ${file} s3://${bucket}`, (error, stdout, stderr) => {
             if (error) {
-                rej(false);
+                rej(error);
             } else {
                 res(true)
             }
@@ -67,11 +67,20 @@ export async function putObject(file, bucket) {
     });
 }
 
+export function getObject(file, bucket) {
+    return spawn('aws', ['--endpoint-url', "http://localhost:8333/", 's3', 'cp', `s3://${bucket}/${file}`, '-'],
+        {
+            env: {
+                PATH: process.env.PATH
+            },
+        });
+}
+
 export async function removeObject(file, bucket) {
     return new Promise((res, rej) => {
         exec(`aws --endpoint-url http://localhost:8333 s3 rm s3://${bucket}/${file}`, (error, stdout, stderr) => {
             if (error) {
-                rej(false);
+                rej(error);
             } else {
                 res(true)
             }
@@ -83,7 +92,7 @@ export async function removeBucket(bucket) {
     return new Promise((res, rej) => {
         exec(`aws --endpoint-url http://localhost:8333 s3 rb s3://${bucket}`, (error, stdout, stderr) => {
             if (error) {
-                rej(false);
+                rej(error);
             } else {
                 res(true)
             }

@@ -1,0 +1,20 @@
+Fri Dec 25 2020 00:22:12 GMT-0600 (Central Standard Time)
+RangeError [ERR_CHILD_PROCESS_STDIO_MAXBUFFER]: stdout maxBuffer length exceeded
+Fri Dec 25 2020 01:03:41 GMT-0600 (Central Standard Time)
+TypeError: fs.createWriteStream is not a function
+Fri Dec 25 2020 01:04:57 GMT-0600 (Central Standard Time)
+TypeError: stream.pipe is not a function
+Fri Dec 25 2020 12:11:56 GMT-0600 (Central Standard Time)
+Error: This socket has been ended by the other party
+Fri Dec 25 2020 12:13:11 GMT-0600 (Central Standard Time)
+Error: Command failed: aws --endpoint-url http://localhost:8333 s3 cp /var/folders/r0/ktfq_wg90b18mrfb034n78wr0000gn/T/hqOvUgdGUbqiDyYs_low s3://waiting_on_bug_bucket
+upload failed: ../../../../var/folders/r0/ktfq_wg90b18mrfb034n78wr0000gn/T/hqOvUgdGUbqiDyYs_low to s3://waiting_on_bug_bucket/hqOvUgdGUbqiDyYs_low Could not connect to the endpoint URL: "http://localhost:8333/waiting_on_bug_bucket/hqOvUgdGUbqiDyYs_low"
+
+Fri Dec 25 2020 14:13:21 GMT-0600 (Central Standard Time)
+Error: Command failed: aws --endpoint-url http://localhost:8333 s3 cp /var/folders/r0/ktfq_wg90b18mrfb034n78wr0000gn/T/RmOVHeVYruzGXfBR_med s3://photagallery_medium_res
+upload failed: ../../../../var/folders/r0/ktfq_wg90b18mrfb034n78wr0000gn/T/RmOVHeVYruzGXfBR_med to s3://photagallery_medium_res/RmOVHeVYruzGXfBR_med An error occurred (InternalError) when calling the PutObject operation (reached max retries: 2): We encountered an internal error, please try again.
+
+Fri Dec 25 2020 14:15:19 GMT-0600 (Central Standard Time)
+Error: Command failed: aws --endpoint-url http://localhost:8333 s3 cp /var/folders/r0/ktfq_wg90b18mrfb034n78wr0000gn/T/eOnYrnljDijxetyR_med s3://photagallery_medium_res
+upload failed: ../../../../var/folders/r0/ktfq_wg90b18mrfb034n78wr0000gn/T/eOnYrnljDijxetyR_med to s3://photagallery_medium_res/eOnYrnljDijxetyR_med An error occurred (InternalError) when calling the PutObject operation (reached max retries: 2): We encountered an internal error, please try again.
+

@@ -13,8 +13,8 @@ function grabSql(file, option) {
 const createDatabase = grabSql('./createDatabase.sql', 'utf-8');
 const useDatabase = grabSql('./useDatabase.sql', 'utf-8');
 
-const createImageTable = grabSql('./createImageTable.sql', 'utf-8');
-const createImageIndex = grabSql('./createIndexImage.sql', 'utf-8');
+const createImageTable = grabSql('./createImageMetadataTable.sql', 'utf-8');
+const createImageIndex = grabSql('./createIndexImageMetadata.sql', 'utf-8');
 
 const createTagTable = grabSql('./createTagTable.sql', 'utf-8');
 const createTagIndex = grabSql('./createIndexTag.sql', 'utf-8');
