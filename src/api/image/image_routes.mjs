@@ -10,10 +10,10 @@ import {
     PREVIEW_IMAGE_DIMENSION,
     SEARCH_RESULT_DIMENSION
 } from "../../../config.mjs";
-import {addImageMetadata} from "../../utils/sql-utils.mjs";
+import {addImageMetadata, deleteImageMetadata, imageIdExists} from "../../utils/sql-utils.mjs";
 import nodePath from "path";
 import os from "os";
-import {getObject, putObject} from "../../utils/weed-utils.mjs";
+import {getObject, putObject, removeObject} from "../../utils/weed-utils.mjs";
 import {validateQueryParamsAll} from "../../utils/koa-utilities.mjs";
 import compose from 'koa-compose';
 
@@ -104,6 +104,27 @@ async function imageGetHandler(ctx, next) {
 router.get('/', compose([
     validateQueryParamsAll(['res', 'id']),
     imageGetHandler,
+]));
+
+async function imageDeleteHandler(ctx, next) {
+    const {id} = ctx.request.query;
+    const exists = await imageIdExists(id);
+    if(!exists) {
+        ctx.status = 412;
+        ctx.body = {error: 'No image exists with id ' + id}
+        return;
+    }
+
+    await deleteImageMetadata(id);
+    await removeObject(id, BUCKET_LOW_RES);
+    await removeObject(id, BUCKET_MED_RES);
+    await removeObject(id, BUCKET_FULL_RES);
+    ctx.body = {success: true};
+}
+
+router.delete('/', compose([
+    validateQueryParamsAll(['id']),
+    imageDeleteHandler,
 ]));
 
 export default router;
