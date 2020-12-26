@@ -1,0 +1,16 @@
+Fri Dec 25 2020 21:09:05 GMT-0600 (Central Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
