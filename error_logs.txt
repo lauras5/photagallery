@@ -14,3 +14,210 @@ Error: MissingQueryParameter
     at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
     at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:377:31)
 
+TypeError: keys.every is not a function
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:14)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16TypeError: keys.every is not a function
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:14)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16TypeError: keys.every is not a function
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:14)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16Fri Dec 25 2020 22:29:54 GMT-0600 (Central Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+
+Error: Duplicate entry 'test' for key 'tag'
+    at PromiseConnection.query (/Users/Diatta/WebstormProjects/photagallery/node_modules/mysql2/promise.js:92:22)
+    at addTag (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/sql-utils.mjs:53:22)
+    at processTicksAndRejections (node:internal/process/task_queues:93:5)
+    at async postTagHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/tag/tag_routes.mjs:30:16)
+    at async validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:15:9)
+    at async file:///Users/Diatta/WebstormProjects/photagallery/src/server.mjs:28:9
+    at async serve (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-static/index.js:53:9)Error: Duplicate entry 'test2' for key 'tag'
+    at PromiseConnection.query (/Users/Diatta/WebstormProjects/photagallery/node_modules/mysql2/promise.js:92:22)
+    at addTag (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/sql-utils.mjs:53:22)
+    at processTicksAndRejections (node:internal/process/task_queues:93:5)
+    at async postTagHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/tag/tag_routes.mjs:30:16)
+    at async validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:15:9)
+    at async file:///Users/Diatta/WebstormProjects/photagallery/src/server.mjs:28:9
+    at async serve (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-static/index.js:53:9)Error: Duplicate entry 'theheckfe' for key 'tag'
+    at PromiseConnection.query (/Users/Diatta/WebstormProjects/photagallery/node_modules/mysql2/promise.js:92:22)
+    at addTag (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/sql-utils.mjs:53:22)
+    at processTicksAndRejections (node:internal/process/task_queues:93:5)
+    at async postTagHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/tag/tag_routes.mjs:30:16)
+    at async validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:15:9)
+    at async file:///Users/Diatta/WebstormProjects/photagallery/src/server.mjs:28:9
+    at async serve (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-static/index.js:53:9)Fri Dec 25 2020 22:38:51 GMT-0600 (Central Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+
+Fri Dec 25 2020 22:38:51 GMT-0600 (Central Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+
+Fri Dec 25 2020 22:38:52 GMT-0600 (Central Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+
+Error: Column 'image_id' cannot be null
+    at PromiseConnection.query (/Users/Diatta/WebstormProjects/photagallery/node_modules/mysql2/promise.js:92:22)
+    at addImageTag (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/sql-utils.mjs:77:22)
+    at postImageTagHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:43:11)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:15:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)Error: Column 'image_id' cannot be null
+    at PromiseConnection.query (/Users/Diatta/WebstormProjects/photagallery/node_modules/mysql2/promise.js:92:22)
+    at addImageTag (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/sql-utils.mjs:77:22)
+    at postImageTagHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:44:11)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:15:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)Error: Duplicate entry 'ayvgDAZMsPyJiHVk-FFXqYGGXGYsReuEg' for key 'PRIMARY'
+    at PromiseConnection.query (/Users/Diatta/WebstormProjects/photagallery/node_modules/mysql2/promise.js:92:22)
+    at addImageTag (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/sql-utils.mjs:77:22)
+    at postImageTagHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:44:11)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:15:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)Fri Dec 25 2020 23:15:11 GMT-0600 (Central Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _anyKeyInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:9:41)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:21:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+
+TypeError: Cannot read property 'query' of undefined
+    at listTagImagesHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:23:47)
+    at imageTagGetHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:32:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:22:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)TypeError: Cannot read property 'query' of undefined
+    at listTagImagesHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:23:47)
+    at imageTagGetHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:32:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:22:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)TypeError: Cannot read property 'query' of undefined
+    at listTagImagesHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:20:47)
+    at imageTagGetHandler (file:///Users/Diatta/WebstormProjects/photagallery/src/api/image-tag/image_tag_routes.mjs:30:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:22:15)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)Fri Dec 25 2020 23:17:26 GMT-0600 (Central Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/Diatta/WebstormProjects/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
+

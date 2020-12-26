@@ -1,5 +1,5 @@
 import Router from "@koa/router";
-import {getImageMetadata, listImageMetadata} from "../../utils/sql-utils.mjs";
+import {getImageMetadata, listImagesMetadata} from "../../utils/sql-utils.mjs";
 const router = new Router();
 
 async function getImageMetadataHandler(ctx, next) {
@@ -7,9 +7,9 @@ async function getImageMetadataHandler(ctx, next) {
     ctx.body = await getImageMetadata(id);
 }
 
-async function listImageMetadataHandler(ctx, next) {
+async function listImagesMetadataHandler(ctx, next) {
     const {limit, page} = ctx.request.query;
-    ctx.body = await listImageMetadata(page, limit);
+    ctx.body = await listImagesMetadata(page, limit);
 }
 
 async function imageMetadataGetHandler(ctx, next) {
@@ -17,7 +17,7 @@ async function imageMetadataGetHandler(ctx, next) {
     if(id) {
         await getImageMetadataHandler(ctx, next);
     } else {
-        await listImageMetadataHandler(ctx, next);
+        await listImagesMetadataHandler(ctx, next);
     }
 }
 

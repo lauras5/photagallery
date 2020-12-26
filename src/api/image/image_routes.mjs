@@ -36,6 +36,7 @@ if(!nodeFs.existsSync(fullDir)) {
 
 async function imagePostHandler(ctx, next) {
     const {files} = ctx.request;
+    const ids = [];
     for (const file of Object.keys(files)) {
         const {size: file_size, path, name} = files[file];
         const data = await fs.readFile(path);
@@ -60,6 +61,7 @@ async function imagePostHandler(ctx, next) {
         }
 
         const id = await addImageMetadata({name, file_size, extension_type: ext, width, height})
+        ids.push(id);
 
         const lowTempPath = nodePath.join(lowDir, id);
         const medTempPath = nodePath.join(medDir, id);
@@ -76,7 +78,7 @@ async function imagePostHandler(ctx, next) {
         await fs.unlink(medTempPath);
         await fs.unlink(fullTempPath);
     }
-    ctx.body = {success: true};
+    ctx.body = ids;
 }
 
 router.post('/', imagePostHandler);

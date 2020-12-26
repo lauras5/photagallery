@@ -28,7 +28,7 @@ export async function getImageMetadata(id) {
     return (await connection.query(sql, [id]))[0][0];
 }
 
-export async function listImageMetadata(page = 0, limit = 20) {
+export async function listImagesMetadata(page = 0, limit = 20) {
     const sql = `SELECT * FROM image_metadata LIMIT ? OFFSET ?`;
     const offset = limit * page;
     return (await connection.query(sql, [limit, offset]))[0];
