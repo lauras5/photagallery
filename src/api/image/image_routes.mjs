@@ -1,11 +1,12 @@
 import Router from "@koa/router";
 import {promises as fs} from "fs";
+import nodeFs from 'fs';
 import {imageStats, resize} from "../../utils/image-utils.mjs";
 import {
-    // BUCKET_FULL_RES,
-    // BUCKET_LOW_RES,
-    // BUCKET_MED_RES,
-    WAITING_ON_BUG_BUCKET,
+    BUCKET_FULL_RES,
+    BUCKET_LOW_RES,
+    BUCKET_MED_RES,
+    // WAITING_ON_BUG_BUCKET,
     PREVIEW_IMAGE_DIMENSION,
     SEARCH_RESULT_DIMENSION
 } from "../../../config.mjs";
@@ -17,6 +18,21 @@ import {validateQueryParamsAll} from "../../utils/koa-utilities.mjs";
 import compose from 'koa-compose';
 
 const router = new Router();
+
+const lowDir = nodePath.join(os.tmpdir(), 'low');
+if(!nodeFs.existsSync(lowDir)) {
+    await fs.mkdir(lowDir);
+}
+
+const medDir = nodePath.join(os.tmpdir(), 'med');
+if(!nodeFs.existsSync(medDir)) {
+    await fs.mkdir(medDir);
+}
+
+const fullDir = nodePath.join(os.tmpdir(), 'full');
+if(!nodeFs.existsSync(fullDir)) {
+    await fs.mkdir(fullDir);
+}
 
 async function imagePostHandler(ctx, next) {
     const {files} = ctx.request;
@@ -45,20 +61,16 @@ async function imagePostHandler(ctx, next) {
 
         const id = await addImageMetadata({name, file_size, extension_type: ext, width, height})
 
-        const lowTempPath = nodePath.join(os.tmpdir(), `${id}_low`);
-        const medTempPath = nodePath.join(os.tmpdir(), `${id}_med`);
-        const fullTempPath = nodePath.join(os.tmpdir(), `${id}_full`);
+        const lowTempPath = nodePath.join(lowDir, id);
+        const medTempPath = nodePath.join(medDir, id);
+        const fullTempPath = nodePath.join(fullDir, id);
         await fs.writeFile(lowTempPath, lowResImage);
         await fs.writeFile(medTempPath, mediumResImage);
         await fs.rename(path, fullTempPath);
 
-        // await putObject(lowTempPath, BUCKET_LOW_RES);
-        // await putObject(medTempPath, BUCKET_MED_RES);
-        // await putObject(path, BUCKET_FULL_RES);
-
-        await putObject(lowTempPath, WAITING_ON_BUG_BUCKET);
-        await putObject(medTempPath, WAITING_ON_BUG_BUCKET);
-        await putObject(fullTempPath, WAITING_ON_BUG_BUCKET);
+        await putObject(lowTempPath, BUCKET_LOW_RES);
+        await putObject(medTempPath, BUCKET_MED_RES);
+        await putObject(fullTempPath, BUCKET_FULL_RES);
 
         await fs.unlink(lowTempPath);
         await fs.unlink(medTempPath);
@@ -71,7 +83,20 @@ router.post('/', imagePostHandler);
 
 async function imageGetHandler(ctx, next) {
     const {res, id} = ctx.request.query;
-    const stream = getObject(`${id}_${res}`, WAITING_ON_BUG_BUCKET);
+    let bucket;
+    if(res === 'low') {
+        bucket = BUCKET_LOW_RES;
+    } else if(res === 'med') {
+        bucket = BUCKET_MED_RES;
+    } else if(res === 'full') {
+        bucket = BUCKET_FULL_RES;
+    } else {
+        ctx.status = 500;
+        ctx.body = {error: 'res must be value low, med, or full'};
+        return;
+    }
+
+    const stream = getObject(id, bucket);
     stream.on('error', (e) => console.log(e));
     ctx.body = stream.stdout;
 }
