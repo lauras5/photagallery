@@ -1,4 +1,4 @@
-export async function loadImages() {
+export function loadImages() {
     // loading bar
     const loadbar = document.getElementById('loader');
     loadbar.classList.add('loading--loading');
@@ -27,7 +27,7 @@ export async function loadImages() {
         return imgCard;
     }
 
-    const response = await fetch('http://localhost:3000/api/image-metadata')
+    fetch('http://localhost:3000/api/image-metadata')
         .then(response => response.json())
         .then(data => {
             // Add images to container
@@ -39,6 +39,7 @@ export async function loadImages() {
         })
         .catch(err => {
             console.log(err);
+            loadbar.classList.add('loading--error');
         })
 }
 

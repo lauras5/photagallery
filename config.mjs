@@ -1,4 +1,4 @@
-export const WEED_DIR = '/Volumes/HOARDING01/weedfs_data/';
+export const WEED_DIR = '../../../../Volumes/HOARDING01/weedfs_data/';
 
 export const SEARCH_RESULT_DIMENSION = 256;
 
