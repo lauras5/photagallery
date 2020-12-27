@@ -40,7 +40,7 @@ body, html {
 }
 
 /* loadbar */
-#loader {
+.loader {
     width: 50%;
     background: rgb(240, 240, 243);
     margin: auto;
@@ -51,7 +51,6 @@ body, html {
     border-radius: 5em;
     margin-top: 5em;
     box-shadow: -10px -10px 30px 0 #FFFFFF, 10px 10px 30px 0 #AEAEC0;
-
 }
 
 .loading--complete {
@@ -65,14 +64,19 @@ body, html {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 5rem;
+    user-select: none;
+}
+
+.images--hide {
+    display: none;
 }
 
 .images__image-card {
-    border: 0.5rem solid #F0F0F3;
+    border: 0.25rem solid #F0F0F3;
     box-shadow: -10px -10px 30px 0 #FFFFFF, 10px 10px 30px 0 #AEAEC0;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
     background: #F0F0F3;
 }
 
@@ -82,6 +86,6 @@ body, html {
 }
 
 .images__image {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
