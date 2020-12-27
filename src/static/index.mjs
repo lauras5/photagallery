@@ -1,3 +1,5 @@
-import {test} from './test.mjs';
+import {getNavbar} from './navbar.mjs';
+import {loadImages} from './images.mjs';
 
-test();
+loadImages();
+getNavbar();
