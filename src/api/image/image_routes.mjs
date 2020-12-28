@@ -66,13 +66,31 @@ async function imagePostHandler(ctx, next) {
         const lowTempPath = nodePath.join(lowDir, id);
         const medTempPath = nodePath.join(medDir, id);
         const fullTempPath = nodePath.join(fullDir, id);
+
         await fs.writeFile(lowTempPath, lowResImage);
         await fs.writeFile(medTempPath, mediumResImage);
         await fs.rename(path, fullTempPath);
 
-        await putObject(lowTempPath, BUCKET_LOW_RES);
-        await putObject(medTempPath, BUCKET_MED_RES);
-        await putObject(fullTempPath, BUCKET_FULL_RES);
+        const putLow = !!await putObject(lowTempPath, BUCKET_LOW_RES);
+        const putMed = !!await putObject(medTempPath, BUCKET_MED_RES);
+        const putFull = !!await putObject(fullTempPath, BUCKET_FULL_RES);
+
+        if (!putLow || !putMed || !putFull) {
+            if (putLow) {
+                await removeObject(lowTempPath, BUCKET_LOW_RES);
+            }
+            if (putMed) {
+                await removeObject(medTempPath, BUCKET_MED_RES);
+            }
+            if (putFull) {
+                await removeObject(fullTempPath, BUCKET_FULL_RES);
+            }
+
+            await deleteImageMetadata(id);
+
+            const index = ids.indexOf(id);
+            ids.splice(index, 1);
+        }
 
         await fs.unlink(lowTempPath);
         await fs.unlink(medTempPath);
