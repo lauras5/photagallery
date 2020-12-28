@@ -93,6 +93,10 @@ async function imagePostHandler(ctx, next) {
             await fs.unlink(lowTempPath);
             await fs.unlink(medTempPath);
             await fs.unlink(fullTempPath);
+
+            ctx.status = 500;
+            ctx.body = {error: 'Failed to add image'};
+            return;
         }
 
         ids.push(id);
