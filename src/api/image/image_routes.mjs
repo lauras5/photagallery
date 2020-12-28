@@ -61,7 +61,6 @@ async function imagePostHandler(ctx, next) {
         }
 
         const id = await addImageMetadata({name, file_size, extension_type: ext, width, height})
-        ids.push(id);
 
         const lowTempPath = nodePath.join(lowDir, id);
         const medTempPath = nodePath.join(medDir, id);
@@ -71,30 +70,28 @@ async function imagePostHandler(ctx, next) {
         await fs.writeFile(medTempPath, mediumResImage);
         await fs.rename(path, fullTempPath);
 
-        const putLow = !!await putObject(lowTempPath, BUCKET_LOW_RES);
-        const putMed = !!await putObject(medTempPath, BUCKET_MED_RES);
-        const putFull = !!await putObject(fullTempPath, BUCKET_FULL_RES);
-
-        if (!putLow || !putMed || !putFull) {
-            if (putLow) {
+        let lastSet = 'none';
+        try {
+            await putObject(lowTempPath, BUCKET_LOW_RES);
+            lastSet = 'low';
+            await putObject(medTempPath, BUCKET_MED_RES);
+            lastSet = 'med';
+            await putObject(fullTempPath, BUCKET_FULL_RES);
+        } catch(error) {
+            if (lastSet === 'med') {
                 await removeObject(lowTempPath, BUCKET_LOW_RES);
-            }
-            if (putMed) {
                 await removeObject(medTempPath, BUCKET_MED_RES);
-            }
-            if (putFull) {
-                await removeObject(fullTempPath, BUCKET_FULL_RES);
+            } else if (lastSet === 'low') {
+                await removeObject(lowTempPath, BUCKET_LOW_RES);
             }
 
             await deleteImageMetadata(id);
-
-            const index = ids.indexOf(id);
-            ids.splice(index, 1);
+            await fs.unlink(lowTempPath);
+            await fs.unlink(medTempPath);
+            await fs.unlink(fullTempPath);
         }
 
-        await fs.unlink(lowTempPath);
-        await fs.unlink(medTempPath);
-        await fs.unlink(fullTempPath);
+        ids.push(id);
     }
     ctx.body = ids;
 }
