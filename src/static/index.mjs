@@ -1,3 +1,3 @@
-import {loadImages} from './images.mjs';
+import {loadLowImages} from './images.mjs';
 
-loadImages();
+loadLowImages();

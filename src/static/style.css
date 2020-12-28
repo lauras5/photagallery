@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
     font-size: 10px;
@@ -5,27 +10,8 @@ html {
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
+    height: 100%;
     font-family: sans-serif;
-}
-
-/* loader */
-.loader {
-    width: 50%;
-    background: rgb(240, 240, 243);
-    margin: auto;
-    padding: 10px;
-    text-align: center;
-    font-size: 15px;
-    color: #373b43;
-    border-radius: 5em;
-    margin-top: 5em;
-    box-shadow: -10px -10px 30px 0 #FFFFFF, 10px 10px 30px 0 #AEAEC0;
-}
-
-.loading--complete {
-    display: none;
 }
 
 /* images */
@@ -59,4 +45,3 @@ body, html {
 .images__image {
     border-radius: 0.5rem;
 }
-

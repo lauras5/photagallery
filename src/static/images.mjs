@@ -5,13 +5,10 @@ function imageComponent(img) {
 
     const id = img.id;
     const imgDiv = document.createElement('img');
-    const imgURL = `http://localhost:3000/api/image?id=${id}&res=low`
 
-    imgDiv.src = imgURL;
+    imgDiv.src = `/api/image?id=${id}&res=low`;
     imgDiv.classList.add('images__image');
     imgDiv.onload = function() {
-        const loader = document.getElementById('loader');
-        loader.classList.add('loading--complete');
         imgCard.classList.remove('images__image-card--hide')
     }
 
@@ -21,26 +18,26 @@ function imageComponent(img) {
 }
 
 async function fetchImages() {
-    const response = await fetch('http://localhost:3000/api/image-metadata');
+    const response = await fetch('/api/image-metadata');
     if (!response.ok) {
-        const message = `An error has occured: ${response.status}`;
+        const message = `An error has occurred: ${response.status}`;
         throw new Error(message);
     } else {
         const images = await response.json();
         const imageContainer = document.getElementById('images');
-        images.map(e => imageContainer.append(imageComponent(e)));
+        const fragment = new DocumentFragment();
+        images.map(e => fragment.appendChild(imageComponent(e)));
+
+        imageContainer.append(fragment);
     }
 }
 
-export function loadImages() {
-    const loader = document.getElementById('loader');
-    const loadText = document.createElement('span');
-    loadText.innerText = 'Loading...';
-    loadText.classList.add('loading__text');
-
-    loader.appendChild(loadText);
-
-    fetchImages().catch(e => { console.log(e) });
+export function loadLowImages() {
+    try {
+        fetchImages();
+    } catch(e) {
+        console.log(e)
+    }
 }
 
 
