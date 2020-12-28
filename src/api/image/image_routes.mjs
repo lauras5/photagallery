@@ -77,6 +77,10 @@ async function imagePostHandler(ctx, next) {
             await putObject(medTempPath, BUCKET_MED_RES);
             lastSet = 'med';
             await putObject(fullTempPath, BUCKET_FULL_RES);
+
+            await fs.unlink(lowTempPath);
+            await fs.unlink(medTempPath);
+            await fs.unlink(fullTempPath);
         } catch(error) {
             if (lastSet === 'med') {
                 await removeObject(id, BUCKET_LOW_RES);
