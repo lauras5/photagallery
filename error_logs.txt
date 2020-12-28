@@ -221,3 +221,193 @@ Error: MissingQueryParameter
     at allowedMethods (/Users/Diatta/WebstormProjects/photagallery/node_modules/@koa/router/lib/router.js:433:12)
     at dispatch (/Users/Diatta/WebstormProjects/photagallery/node_modules/koa-compose/index.js:42:32)
 
+Error: Command failed: aws --endpoint-url http://localhost:8333 s3 cp /var/folders/2j/2b2ygyfx2x7g2td9nt_33ghw0000gn/T/low/IvQGtCMpahmqOQbO s3://photagallery_low_res
+/bin/sh: aws: command not found
+
+    at ChildProcess.exithandler (node:child_process:309:12)
+    at ChildProcess.emit (node:events:327:20)
+    at maybeClose (node:internal/child_process:1048:16)
+    at Socket.<anonymous> (node:internal/child_process:439:11)
+    at Socket.emit (node:events:327:20)
+    at Pipe.<anonymous> (node:net:656:12)Error: Command failed: aws --endpoint-url http://localhost:8333 s3 cp /var/folders/2j/2b2ygyfx2x7g2td9nt_33ghw0000gn/T/low/VZWGMrrPodOuzNhb s3://photagallery_low_res
+/bin/sh: aws: command not found
+
+    at ChildProcess.exithandler (node:child_process:309:12)
+    at ChildProcess.emit (node:events:327:20)
+    at maybeClose (node:internal/child_process:1048:16)
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:288:5)Error: Command failed: aws --endpoint-url http://localhost:8333 s3 cp /var/folders/2j/2b2ygyfx2x7g2td9nt_33ghw0000gn/T/low/GRVIfhkeCnmvFQva s3://photagallery_low_res
+/bin/sh: aws: command not found
+
+    at ChildProcess.exithandler (node:child_process:309:12)
+    at ChildProcess.emit (node:events:327:20)
+    at maybeClose (node:internal/child_process:1048:16)
+    at Socket.<anonymous> (node:internal/child_process:439:11)
+    at Socket.emit (node:events:327:20)
+    at Pipe.<anonymous> (node:net:656:12)Error: Command failed: aws --endpoint-url http://localhost:8333 s3 cp /var/folders/2j/2b2ygyfx2x7g2td9nt_33ghw0000gn/T/low/HSdQZUmxDEBujuya s3://photagallery_low_res
+upload failed: ../../../../var/folders/2j/2b2ygyfx2x7g2td9nt_33ghw0000gn/T/low/HSdQZUmxDEBujuya to s3://photagallery_low_res/HSdQZUmxDEBujuya Read timeout on endpoint URL: "http://localhost:8333/photagallery_low_res/HSdQZUmxDEBujuya"
+
+    at ChildProcess.exithandler (node:child_process:309:12)
+    at ChildProcess.emit (node:events:327:20)
+    at maybeClose (node:internal/child_process:1048:16)
+    at Socket.<anonymous> (node:internal/child_process:439:11)
+    at Socket.emit (node:events:327:20)
+    at Pipe.<anonymous> (node:net:656:12)Sat Dec 26 2020 17:30:44 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 17:32:44 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 17:38:31 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 17:42:14 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 18:22:28 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 18:34:50 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 18:35:23 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 19:22:25 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 19:22:31 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
+Sat Dec 26 2020 19:22:46 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
