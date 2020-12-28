@@ -79,10 +79,10 @@ async function imagePostHandler(ctx, next) {
             await putObject(fullTempPath, BUCKET_FULL_RES);
         } catch(error) {
             if (lastSet === 'med') {
-                await removeObject(lowTempPath, BUCKET_LOW_RES);
-                await removeObject(medTempPath, BUCKET_MED_RES);
+                await removeObject(id, BUCKET_LOW_RES);
+                await removeObject(id, BUCKET_MED_RES);
             } else if (lastSet === 'low') {
-                await removeObject(lowTempPath, BUCKET_LOW_RES);
+                await removeObject(id, BUCKET_LOW_RES);
             }
 
             await deleteImageMetadata(id);
