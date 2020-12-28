@@ -61,22 +61,45 @@ async function imagePostHandler(ctx, next) {
         }
 
         const id = await addImageMetadata({name, file_size, extension_type: ext, width, height})
-        ids.push(id);
 
         const lowTempPath = nodePath.join(lowDir, id);
         const medTempPath = nodePath.join(medDir, id);
         const fullTempPath = nodePath.join(fullDir, id);
+
         await fs.writeFile(lowTempPath, lowResImage);
         await fs.writeFile(medTempPath, mediumResImage);
         await fs.rename(path, fullTempPath);
 
-        await putObject(lowTempPath, BUCKET_LOW_RES);
-        await putObject(medTempPath, BUCKET_MED_RES);
-        await putObject(fullTempPath, BUCKET_FULL_RES);
+        let lastSet;
+        try {
+            await putObject(lowTempPath, BUCKET_LOW_RES);
+            lastSet = 'low';
+            await putObject(medTempPath, BUCKET_MED_RES);
+            lastSet = 'med';
+            await putObject(fullTempPath, BUCKET_FULL_RES);
 
-        await fs.unlink(lowTempPath);
-        await fs.unlink(medTempPath);
-        await fs.unlink(fullTempPath);
+            await fs.unlink(lowTempPath);
+            await fs.unlink(medTempPath);
+            await fs.unlink(fullTempPath);
+        } catch(error) {
+            if (lastSet === 'med') {
+                await removeObject(id, BUCKET_LOW_RES);
+                await removeObject(id, BUCKET_MED_RES);
+            } else if (lastSet === 'low') {
+                await removeObject(id, BUCKET_LOW_RES);
+            }
+
+            await deleteImageMetadata(id);
+            await fs.unlink(lowTempPath);
+            await fs.unlink(medTempPath);
+            await fs.unlink(fullTempPath);
+
+            ctx.status = 500;
+            ctx.body = {error: 'Failed to add image'};
+            return;
+        }
+
+        ids.push(id);
     }
     ctx.body = ids;
 }
