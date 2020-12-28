@@ -70,7 +70,7 @@ async function imagePostHandler(ctx, next) {
         await fs.writeFile(medTempPath, mediumResImage);
         await fs.rename(path, fullTempPath);
 
-        let lastSet = 'none';
+        let lastSet;
         try {
             await putObject(lowTempPath, BUCKET_LOW_RES);
             lastSet = 'low';
