@@ -14,7 +14,6 @@
 	}
 
 	function onload() {
-    	console.log('loaded')
 		this.parentNode.classList.remove('images__image-card--hide');
 	}
 
