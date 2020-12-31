@@ -2,6 +2,7 @@
     import {
         onMount
     } from 'svelte';
+	import { fade, fly } from 'svelte/transition';
 
     async function fetchLowImages(pageNum) {
         const response = await fetch(`/api/image-metadata?page=${pageNum}`);
@@ -13,7 +14,7 @@
         }
 	}
 
-	function onload() {
+	function handleImageLoad() {
 		this.parentNode.classList.remove('images__image-card--hide');
 	}
 
@@ -42,7 +43,7 @@
 <div class="images">
 	{#each images as {id}}
 		<div class='images__image-card images__image-card--hide'>
-			<img on:load={onload} class="images__image" src="/api/image?id={id}&res=low">
+			<img on:load={handleImageLoad} class="images__image" src="/api/image?id={id}&res=low">
 		</div>
 	{/each}
 </div>
@@ -73,7 +74,6 @@
 
 	.images__image-card:hover {
 		box-shadow: -10px -10px 30px 0 #e3e3e3, 10px 10px 30px 0 #91919b;
-		cursor: pointer;
 	}
 
 	.images__image {
@@ -86,7 +86,6 @@
 		border-radius: 2rem;
 		border: none;
 		padding: 1rem;
-		margin: auto;
 		box-shadow: -10px -10px 30px 0 #e3e3e3, 10px 10px 30px 0 #91919b;
 		position: fixed;
 		bottom: 2vw;
