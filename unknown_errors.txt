@@ -38,3 +38,9 @@ Sat Dec 26 2020 17:16:23 GMT-0800 (Pacific Standard Time)
 Error: Command failed: aws --endpoint-url http://localhost:8333 s3 cp /var/folders/2j/2b2ygyfx2x7g2td9nt_33ghw0000gn/T/low/HSdQZUmxDEBujuya s3://photagallery_low_res
 upload failed: ../../../../var/folders/2j/2b2ygyfx2x7g2td9nt_33ghw0000gn/T/low/HSdQZUmxDEBujuya to s3://photagallery_low_res/HSdQZUmxDEBujuya Read timeout on endpoint URL: "http://localhost:8333/photagallery_low_res/HSdQZUmxDEBujuya"
 
+Thu Dec 31 2020 12:53:49 GMT-0800 (Pacific Standard Time)
+Error: Undeclared variable: NaN
+Thu Dec 31 2020 12:54:06 GMT-0800 (Pacific Standard Time)
+Error: Undeclared variable: NaN
+Thu Dec 31 2020 12:54:21 GMT-0800 (Pacific Standard Time)
+Error: Undeclared variable: NaN

@@ -3,27 +3,51 @@
         onMount
     } from 'svelte';
 
-    async function fetchImages() {
-        const response = await fetch('/api/image-metadata');
+    async function fetchLowImages(pageNum) {
+        const response = await fetch(`/api/image-metadata?page=${pageNum}`);
         if (!response.ok) {
             const message = `An error has occurred: ${response.status}`;
             throw new Error(message);
         } else {
             return await response.json();
         }
-		}
-		
-		function onload(e) {
-			e.parentNode.classList.remove('images__image-card--hide');
-		}
+    }
+
+    function handleImageLoad() {
+        this.parentNode.classList.remove('images__image-card--hide');
+    }
 
     let images = [];
+    let page = 0;
+    let imageLimit = 20;
+    let disabled = false;
+    let innerText = 'Load More Images';
+
+    async function handleClick() {
+        page++;
+        const fetchedImages = await fetchLowImages(page);
+
+        if (fetchedImages.length < imageLimit) {
+            disabled = true;
+            innerText = 'No More Images to Load'
+        }
+        images = images.concat(fetchedImages);
+    }
 
     onMount(async () => {
-				images = await fetchImages();
-		});
+        images = await fetchLowImages(page);
+    });
 
 </script>
+
+<div class="images">
+    {#each images as {id}}
+        <div class='images__image-card images__image-card--hide'>
+            <img on:load={handleImageLoad} class="images__image" src="/api/image?id={id}&res=low">
+        </div>
+    {/each}
+</div>
+<button class="load-low-images-btn" on:click={handleClick} {disabled}>{innerText}</button>
 
 <style>
     .images {
@@ -50,18 +74,24 @@
 
     .images__image-card:hover {
         box-shadow: -10px -10px 30px 0 #e3e3e3, 10px 10px 30px 0 #91919b;
-        cursor: pointer;
     }
 
     .images__image {
         border-radius: 0.5rem;
     }
-</style>
 
-<div class="images">
-	{#each images as {id}}
-		<div class='images__image-card images__image-card--hide'>
-			<img use:onload class="images__image" src="/api/image?id={id}&res=low">
-		</div>
-	{/each}
-</div>
+    /* low res button */
+    .load-low-images-btn {
+        width: 28rem;
+        height: 4rem;
+        border-radius: 2rem;
+        border: none;
+        padding: 1rem;
+        box-shadow: -10px -10px 30px 0 #e3e3e3, 10px 10px 30px 0 #91919b;
+        position: fixed;
+        bottom: 2vw;
+        right: 40vw;
+        font-size: 1.5rem;
+        z-index: 1;
+    }
+</style>
