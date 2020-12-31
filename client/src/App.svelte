@@ -19,18 +19,19 @@
 
     let images = [];
     let page = 0;
+    let imageLimit = 20;
     let disabled = false;
     let innerText = 'Load More Images';
 
     async function handleClick() {
         page++;
         const fetchedImages = await fetchLowImages(page);
-        if (fetchedImages.length > 0) {
-            images = images.concat(fetchedImages);
-        } else {
+
+        if (fetchedImages.length < imageLimit) {
             disabled = true;
             innerText = 'No More Images to Load'
         }
+        images = images.concat(fetchedImages);
     }
 
     onMount(async () => {
@@ -46,7 +47,7 @@
         </div>
     {/each}
 </div>
-<button class="load-low-images-btn" on:click={handleClick} {disabled}>{innerText.toUpperCase()}</button>
+<button class="load-low-images-btn" on:click={handleClick} {disabled}>{innerText}</button>
 
 <style>
     .images {
