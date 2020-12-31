@@ -411,3 +411,34 @@ Error: MissingQueryParameter
     at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
     at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
 
+Error: Undeclared variable: NaN
+    at PromiseConnection.query (/Users/laurasalcido/Desktop/photagallery/node_modules/mysql2/promise.js:92:22)
+    at listImagesMetadata (file:///Users/laurasalcido/Desktop/photagallery/src/utils/sql-utils.mjs:34:30)
+    at listImagesMetadataHandler (file:///Users/laurasalcido/Desktop/photagallery/src/api/image-metadata/image_metadata_routes.mjs:12:22)
+    at imageMetadataGetHandler (file:///Users/laurasalcido/Desktop/photagallery/src/api/image-metadata/image_metadata_routes.mjs:20:15)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16Error: Undeclared variable: NaN
+    at PromiseConnection.query (/Users/laurasalcido/Desktop/photagallery/node_modules/mysql2/promise.js:92:22)
+    at listImagesMetadata (file:///Users/laurasalcido/Desktop/photagallery/src/utils/sql-utils.mjs:34:30)
+    at listImagesMetadataHandler (file:///Users/laurasalcido/Desktop/photagallery/src/api/image-metadata/image_metadata_routes.mjs:12:22)
+    at imageMetadataGetHandler (file:///Users/laurasalcido/Desktop/photagallery/src/api/image-metadata/image_metadata_routes.mjs:20:15)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16Error: Undeclared variable: NaN
+    at PromiseConnection.query (/Users/laurasalcido/Desktop/photagallery/node_modules/mysql2/promise.js:92:22)
+    at listImagesMetadata (file:///Users/laurasalcido/Desktop/photagallery/src/utils/sql-utils.mjs:34:30)
+    at listImagesMetadataHandler (file:///Users/laurasalcido/Desktop/photagallery/src/api/image-metadata/image_metadata_routes.mjs:12:22)
+    at imageMetadataGetHandler (file:///Users/laurasalcido/Desktop/photagallery/src/api/image-metadata/image_metadata_routes.mjs:20:15)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:433:12)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
