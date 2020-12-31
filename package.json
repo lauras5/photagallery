@@ -4,7 +4,7 @@
   "description": "An application for managing large image libraries.",
   "main": "index.js",
   "scripts": {
-    "all": "concurrently \"npm run redis\" \"npm run weed\" \"npm run start\"",
+    "all": "concurrently \"npm run redis\" \"npm run weed\" \"npm run start\" 'cd client; npm run dev;'",
     "start": "node src/server.mjs",
     "redis": "redis-server",
     "weed": "node scripts/startSeaweedFS.mjs",
