@@ -6,11 +6,10 @@ import {
     BUCKET_FULL_RES,
     BUCKET_LOW_RES,
     BUCKET_MED_RES,
-    // WAITING_ON_BUG_BUCKET,
     PREVIEW_IMAGE_DIMENSION,
     SEARCH_RESULT_DIMENSION
 } from "../../../config.mjs";
-import {addImageMetadata, deleteImageMetadata, imageIdExists} from "../../utils/sql-utils.mjs";
+import {addImageMetadata, addImageTag, addTag, deleteImageMetadata, imageIdExists} from "../../utils/sql-utils.mjs";
 import nodePath from "path";
 import os from "os";
 import {getObject, putObject, removeObject} from "../../utils/weed-utils.mjs";
@@ -36,7 +35,20 @@ if(!nodeFs.existsSync(fullDir)) {
 
 async function imagePostHandler(ctx, next) {
     const {files} = ctx.request;
+    const tags = (ctx.request.query.tags || '').split(',');
     const ids = [];
+    const tagIds = [];
+
+    for(const tag of tags) {
+        if(tag === '') continue;
+        try {
+            const tagId = await addTag(tag);
+        } catch(error) {
+            console.error(error);
+        }
+        tagIds.push(tagId);
+    }
+
     for (const file of Object.keys(files)) {
         const {size: file_size, path, name} = files[file];
         const data = await fs.readFile(path);
@@ -61,6 +73,10 @@ async function imagePostHandler(ctx, next) {
         }
 
         const id = await addImageMetadata({name, file_size, extension_type: ext, width, height})
+
+        for(const tagId of tagIds) {
+            await addImageTag({image_id: id, tag_id: tagId});
+        }
 
         const lowTempPath = nodePath.join(lowDir, id);
         const medTempPath = nodePath.join(medDir, id);
