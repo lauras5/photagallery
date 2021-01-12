@@ -441,4 +441,19 @@ Error: Undeclared variable: NaN
     at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
     at allowedMethods (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:433:12)
     at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16Thu Dec 31 2020 22:17:55 GMT-0800 (Pacific Standard Time)
+Error:
+MissingQueryParameter
+Stack Trace:
+Error: MissingQueryParameter
+    at createError (file:///Users/laurasalcido/Desktop/photagallery/src/utils/error-utilities.mjs:3:21)
+    at _allKeysInArray (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:5:42)
+    at validateParams (file:///Users/laurasalcido/Desktop/photagallery/src/utils/koa-utilities.mjs:14:9)
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
     at /Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:42:32)
+    at /Users/laurasalcido/Desktop/photagallery/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/laurasalcido/Desktop/photagallery/node_modules/@koa/router/lib/router.js:377:31)
+
